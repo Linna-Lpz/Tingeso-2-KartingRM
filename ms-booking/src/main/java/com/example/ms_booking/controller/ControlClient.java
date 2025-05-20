@@ -1,7 +1,7 @@
 package com.example.ms_booking.controller;
 
-import com.example.ms_booking.entity.EntityBooking;
-import com.example.ms_booking.service.ServiceBooking;
+import com.example.ms_booking.entity.EntityClient;
+import com.example.ms_booking.service.ServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/booking")
-public class ControlBooking {
+@RequestMapping("/client")
+public class ControlClient {
     @Autowired
-    ServiceBooking serviceBooking;
+    ServiceClient serviceClient;
 
     @PostMapping("/save")
-    public ResponseEntity<EntityBooking> saveBooking(@RequestBody EntityBooking booking) {
-        serviceBooking.saveBooking(booking);
-        return ResponseEntity.ok(booking);
+    public ResponseEntity<EntityClient> saveClient(@RequestBody EntityClient client) {
+        serviceClient.saveClient(client);
+        return ResponseEntity.ok(client);
     }
 }

@@ -1,5 +1,8 @@
 server:
   port: 8002
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 eureka:
   instance:
     preferIpAddress: true

@@ -16,9 +16,6 @@ public class ServiceDiscounts2 {
                 : (5 == visitsPerMonth || visitsPerMonth == 6) ? 20
                 : (visitsPerMonth >= 7) ? 30
                 : 0;
-        int discountedPrice = basePrice - ((basePrice * discount) / 100);
-        System.out.println("discount2: " + discount);
-        System.out.print("Total price after discount: " + (basePrice - (basePrice * discount / 100)));
-        return discountedPrice;
+        return basePrice - ((basePrice * discount) / 100);
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 @Service
 public class ServiceBooking {
@@ -42,7 +43,7 @@ public class ServiceBooking {
                 EntityClient client = repoClient.findByClientRUT(rut);
                 if (client != null) {
                     discount = discountForVisitsPerMonth(client.getVisitsPerMonth(), basePrice);
-                    if (discount == 0) {
+                    if (Objects.equals(discount, basePrice)) {
                         discountsListType.append("no,");
                     } else {
                         discountsListType.append("visitas,");
@@ -61,13 +62,13 @@ public class ServiceBooking {
                 EntityClient client = repoClient.findByClientRUT(rut);
                 if (client != null) {
                     String clientBirthday = client.getClientBirthday();
-                    if (bDayDiscountApplied == 0 && discountForBirthday(clientBirthday, bookingDayMonth) != 0) {
-                        discount = discountForBirthday(clientBirthday, bookingDayMonth);
+                    if (bDayDiscountApplied == 0 && !Objects.equals(discountForBirthday(clientBirthday, bookingDayMonth, basePrice), basePrice)) {
+                        discount = discountForBirthday(clientBirthday, bookingDayMonth, basePrice);
                         bDayDiscountApplied = 1;
                         discountsListType.append("cumpleaños,");
                     } else {
                         discount = discountForVisitsPerMonth(client.getVisitsPerMonth(), basePrice);
-                        if (discount == 0) {
+                        if (Objects.equals(discount, basePrice)) {
                             discount = discountForNumOfPeople(numOfPeople, basePrice); // Descuento por grupo de 3 a 5 personas
                             discountsListType.append("integrantes,");
                         } else {
@@ -88,13 +89,13 @@ public class ServiceBooking {
                 EntityClient client = repoClient.findByClientRUT(rut);
                 if (client != null) {
                     String clientBirthday = client.getClientBirthday();
-                    if (bDayDiscountApplied < 3 && discountForBirthday(clientBirthday, bookingDayMonth) != 0) {
-                        discount = discountForBirthday(clientBirthday, bookingDayMonth);
+                    if (bDayDiscountApplied < 3 && !Objects.equals(discountForBirthday(clientBirthday, bookingDayMonth, basePrice), basePrice)) {
+                        discount = discountForBirthday(clientBirthday, bookingDayMonth, basePrice);
                         bDayDiscountApplied += 1;
                         discountsListType.append("cumpleaños,");
                     } else {
                         discount = discountForVisitsPerMonth(client.getVisitsPerMonth(), basePrice);
-                        if (discount == 30) {
+                        if (!Objects.equals(discount, basePrice)) {
                             discountsListType.append("visitas,");
                         } else {
                             discount = discountForNumOfPeople(numOfPeople, basePrice); // Descuento por el grupo de 6 a 10 personas
@@ -129,6 +130,7 @@ public class ServiceBooking {
 
         // Establecer estado de la reserva
         booking.setBookingStatus("sin confirmar");
+
         // Guardar la reserva
         repoBooking.save(booking);
     }
@@ -152,15 +154,15 @@ public class ServiceBooking {
     }
 
     public Integer discountForNumOfPeople(int numOfPeople, int basePrice) {
-        return restTemplate.getForObject("http://ms-discounts2/discounts2/discount/" + numOfPeople + "/" + basePrice, Integer.class);
+        return restTemplate.getForObject("http://ms-discounts1/discounts1/discount/" + numOfPeople + "/" + basePrice, Integer.class);
     }
 
     public Integer discountForVisitsPerMonth(int visitsPerMonth, int basePrice) {
         return restTemplate.getForObject("http://ms-discounts2/discounts2/discount/" + visitsPerMonth + "/" + basePrice, Integer.class);
     }
 
-    public Integer discountForBirthday(String clientBirthday, String bookingDayMonth) {
-        return restTemplate.getForObject("http://ms-special-rates/specialRates/discount/" + clientBirthday + "/" + bookingDayMonth, Integer.class);
+    public Integer discountForBirthday(String clientBirthday, String bookingDayMonth, int basePrice) {
+        return restTemplate.getForObject("http://ms-special-rates/special-rates/discount/" + clientBirthday + "/" + bookingDayMonth + "/" + basePrice, Integer.class);
     }
 
 }

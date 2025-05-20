@@ -11,12 +11,12 @@ public class ServiceSpecialRates {
      * @param bookingDayMonth fecha de la reserva (día y mes)
      * @return int
      */
-    public int discountForBirthday(String clientBirthday, String bookingDayMonth){
+    public int discountForBirthday(String clientBirthday, String bookingDayMonth, int basePrice) {
         int discount = 0;
         if (clientBirthday != null && clientBirthday.substring(0, 5).equals(bookingDayMonth)) {
             discount = 50;
         }
-        return discount;
+        return basePrice - ((basePrice * discount) / 100);
     }
 
 }

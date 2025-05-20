@@ -10,8 +10,10 @@ public class ControlSpecialRates {
     @Autowired
     ServiceSpecialRates serviceSpecialRates;
 
-    @GetMapping("/discount/{clientBirthday}/{bookingDayMonth}")
-    public int discountForBirthday(@PathVariable String clientBirthday, @PathVariable String bookingDayMonth){
-        return serviceSpecialRates.discountForBirthday(clientBirthday, bookingDayMonth);
+    @GetMapping("/discount/{clientBirthday}/{bookingDayMonth}/{basePrice}")
+    public int discountForBirthday(@PathVariable String clientBirthday,
+                                   @PathVariable String bookingDayMonth,
+                                   @PathVariable int basePrice) {
+        return serviceSpecialRates.discountForBirthday(clientBirthday, bookingDayMonth, basePrice);
     }
 }

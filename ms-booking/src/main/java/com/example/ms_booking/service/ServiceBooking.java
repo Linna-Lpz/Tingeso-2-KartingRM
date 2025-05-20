@@ -1,6 +1,6 @@
 package com.example.ms_booking.service;
 
-import com.example.ms_booking.entity.Booking;
+import com.example.ms_booking.entity.EntityBooking;
 import com.example.ms_booking.repository.RepoBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class ServiceBooking {
     @Autowired
     RestTemplate restTemplate;
 
-    public Booking saveBooking(Booking booking) {
+    public EntityBooking saveBooking(EntityBooking booking) {
         // Establecer tarifa base y duración de la reserva
         Integer lapsOrMaxTimeAllowed = booking.getLapsOrMaxTimeAllowed();
         Integer basePrice = getBasePrice(lapsOrMaxTimeAllowed);

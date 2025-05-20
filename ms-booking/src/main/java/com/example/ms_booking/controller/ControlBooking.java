@@ -1,6 +1,6 @@
 package com.example.ms_booking.controller;
 
-import com.example.ms_booking.entity.Booking;
+import com.example.ms_booking.entity.EntityBooking;
 import com.example.ms_booking.service.ServiceBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class ControlBooking {
     private ServiceBooking serviceBooking;
 
     @PostMapping("/save")
-    public ResponseEntity<Booking> saveBooking(@RequestBody Booking booking) {
+    public ResponseEntity<EntityBooking> saveBooking(@RequestBody EntityBooking booking) {
         serviceBooking.saveBooking(booking);
         return ResponseEntity.ok(booking);
     }

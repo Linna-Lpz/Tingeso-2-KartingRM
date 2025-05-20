@@ -51,7 +51,7 @@ spring:
           predicates:
             - Path=/reports/**
 
-        - id: ms-special-rate
-          uri: lb://ms-special-rate
+        - id: ms-special-rates
+          uri: lb://ms-special-rates
           predicates:
-            - Path=/special-rate/**
+            - Path=/special-rates/**

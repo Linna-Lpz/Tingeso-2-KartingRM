@@ -1,21 +1,17 @@
 package com.example.ms_booking.service;
 
-import com.example.ms_booking.dto.EntityRackDTO;
 import com.example.ms_booking.entity.EntityBooking;
 import com.example.ms_booking.entity.EntityClient;
 import com.example.ms_booking.repository.RepoBooking;
 import com.example.ms_booking.repository.RepoClient;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -253,11 +249,11 @@ public class ServiceBooking {
     //-----------------------------------------------------------
 
     public void saveRack(Long id, LocalDate bookingDate, LocalTime bookingTime, LocalTime bookingTimeEnd, String bookingStatus, String clientName){
-        restTemplate.postForObject("http://ms-rack/rack/save" + id + "/" + bookingDate + "/" + bookingTime + "/" + bookingTimeEnd + "/" + bookingStatus + "/" + clientName, null, EntityRackDTO.class);
+        restTemplate.postForObject("http://ms-rack/rack/save/" + id + "/" + bookingDate + "/" + bookingTime + "/" + bookingTimeEnd + "/" + bookingStatus + "/" + clientName, null, String.class);
     }
 
     public void deleteRack(Long id){
-        restTemplate.delete("http://ms-rack/rack/delete" + id + "/");
+        restTemplate.delete("http://ms-rack/rack/delete/" + id);
     }
 
     //------------------------------------------------------------
@@ -295,4 +291,64 @@ public class ServiceBooking {
         return repoBooking.findByClientsRUTContains(rut);
     }
 
+
+    /**
+     * Método para obtener una lista de reservas de un cliente
+     * @param rut RUT del cliente
+     * @return lista de reservas
+     */
+    public List<EntityBooking> getBookingsByUserRut(String rut) {
+        List<EntityBooking> bookings = repoBooking.findByClientsRUTContains(rut);
+        List<EntityBooking> filteredBookings = new ArrayList<>();
+
+        if (bookings.isEmpty()) {
+            System.out.println("No se encontraron reservas para el cliente con RUT: " + rut);
+            return new ArrayList<>();
+        } else {
+            for (EntityBooking booking : bookings) {
+                // Verificar si el RUT del cliente coincide con el RUT de la reserva
+                List<String> clientsRUT = List.of(booking.getClientsRUT().split(","));
+                if (clientsRUT.get(0).equals(rut)) {
+                    filteredBookings.add(booking);
+                }
+            }
+        }
+        return filteredBookings;
+    }
+
+    /**
+     * Método para obtener una lista de reservas por fecha
+     * @param date fecha de la reserva
+     * @return lista de horas de reserva
+     */
+    public List<LocalTime> getTimesByDate(LocalDate date){
+        List<EntityBooking> bookings = repoBooking.findByBookingDate(date);
+        List<LocalTime> times = new ArrayList<>();
+        for (EntityBooking booking : bookings) {
+            times.add(booking.getBookingTime());
+        }
+        return times;
+    }
+
+    /**
+     * Método para obtener una lista de reservas por fecha final
+     * @param date fecha de la reserva
+     * @return lista de horas de reserva
+     */
+    public List<LocalTime> getTimesEndByDate(LocalDate date){
+        List<EntityBooking> bookings = repoBooking.findByBookingDate(date);
+        List<LocalTime> times = new ArrayList<>();
+        for (EntityBooking booking : bookings) {
+            times.add(booking.getBookingTimeEnd());
+        }
+        return times;
+    }
+
+    /**
+     * Método para obtener una lista de reservas confirmadas
+     * @return lista de reservas confirmadas
+     */
+    public List<EntityBooking> getConfirmedBookings() {
+        return repoBooking.findByBookingStatusContains("confirmada");
+    }
 }

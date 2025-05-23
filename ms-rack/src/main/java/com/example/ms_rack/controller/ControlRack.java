@@ -32,8 +32,9 @@ public class ControlRack {
     }
 
     @GetMapping("/getBookingsForRack/{month}/{year}")
-    public List<EntityRack> getBookingsForRack(String month, String year){
-        return serviceRack.getBookingsForRack(month, year);
+    public ResponseEntity<List<EntityRack>> getBookingsForRack(@PathVariable String month, @PathVariable String year){
+        List<EntityRack> bookings = serviceRack.getBookingsForRack(month, year);
+        return ResponseEntity.ok(bookings);
     }
 }
 

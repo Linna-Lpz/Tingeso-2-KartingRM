@@ -1,15 +1,20 @@
 package com.example.ms_booking.service;
 
+import com.example.ms_booking.dto.EntityRackDTO;
 import com.example.ms_booking.entity.EntityBooking;
 import com.example.ms_booking.entity.EntityClient;
 import com.example.ms_booking.repository.RepoBooking;
 import com.example.ms_booking.repository.RepoClient;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Objects;
@@ -227,6 +232,7 @@ public class ServiceBooking {
         EntityBooking booking = repoBooking.findById(bookingId)
                 .orElseThrow(() -> new RuntimeException("Reserva no encontrada con ID: " + bookingId));
         booking.setBookingStatus("confirmada");
+        saveRack(booking.getId(), booking.getBookingDate(), booking.getBookingTime(), booking.getBookingTimeEnd(), booking.getBookingStatus(), booking.getClientsNames().split(",")[0]);
         repoBooking.save(booking);
     }
 
@@ -238,11 +244,26 @@ public class ServiceBooking {
         EntityBooking booking = repoBooking.findById(bookingId)
                 .orElseThrow(() -> new RuntimeException("Reserva no encontrada con ID: " + bookingId));
         booking.setBookingStatus("cancelada");
+        deleteRack(booking.getId());
         repoBooking.save(booking);
     }
 
+    //-----------------------------------------------------------
+    //    Métodos para obtener reservas para el rack semanal
+    //-----------------------------------------------------------
 
-    // Métodos para obtener reservas para el reporte
+    public void saveRack(Long id, LocalDate bookingDate, LocalTime bookingTime, LocalTime bookingTimeEnd, String bookingStatus, String clientName){
+        restTemplate.postForObject("http://ms-rack/rack/save" + id + "/" + bookingDate + "/" + bookingTime + "/" + bookingTimeEnd + "/" + bookingStatus + "/" + clientName, null, EntityRackDTO.class);
+    }
+
+    public void deleteRack(Long id){
+        restTemplate.delete("http://ms-rack/rack/delete" + id + "/");
+    }
+
+    //------------------------------------------------------------
+    //    Métodos para obtener reservas para el reporte
+    //------------------------------------------------------------
+
     public List<EntityBooking> findByStatusAndDayAndLapsOrMaxTime(String status, String month, Integer maxTimeAllowed) {
         return repoBooking.findByStatusAndDayAndLapsOrMaxTime(status, month, maxTimeAllowed);
     }
@@ -261,6 +282,17 @@ public class ServiceBooking {
 
     public List<EntityBooking> findByStatusAndDayAndNumOfPeople11to15(String status, String month, Integer numOfPeople) {
         return repoBooking.findByStatusAndDayAndNumOfPeople11to15(status, month, numOfPeople);
+    }
+
+    //------------------------------------------------------------
+    //    Métodos para x
+    //------------------------------------------------------------
+    public List<EntityBooking> findByBookingDate(LocalDate bookingDate){
+        return repoBooking.findByBookingDate(bookingDate);
+    }
+
+    public List<EntityBooking> findByClientsRUTContains(String rut){
+        return repoBooking.findByClientsRUTContains(rut);
     }
 
 }

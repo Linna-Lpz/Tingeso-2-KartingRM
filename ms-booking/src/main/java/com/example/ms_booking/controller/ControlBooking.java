@@ -1,11 +1,15 @@
 package com.example.ms_booking.controller;
 
 import com.example.ms_booking.entity.EntityBooking;
+import com.example.ms_booking.repository.RepoBooking;
 import com.example.ms_booking.service.ServiceBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -13,6 +17,8 @@ import java.util.List;
 public class ControlBooking {
     @Autowired
     ServiceBooking serviceBooking;
+    @Autowired
+    RepoBooking repoBooking;
 
     @PostMapping("/save")
     public ResponseEntity<EntityBooking> saveBooking(@RequestBody EntityBooking booking) {
@@ -51,6 +57,97 @@ public class ControlBooking {
         serviceBooking.cancelBooking(bookingId);
         return ResponseEntity.ok("Reserva cancelada");
     }
+
+    /**
+     * Método para obtener una lista de reservas de un cliente
+     * @param rut RUT del cliente
+     * @return lista de reservas
+     */
+    public List<EntityBooking> getBookingsByUserRut(String rut) {
+        List<EntityBooking> bookings = repoBooking.findByClientsRUTContains(rut);
+        List<EntityBooking> filteredBookings = new ArrayList<>();
+
+        if (bookings.isEmpty()) {
+            System.out.println("No se encontraron reservas para el cliente con RUT: " + rut);
+            return new ArrayList<>();
+        } else {
+            for (EntityBooking booking : bookings) {
+                // Verificar si el RUT del cliente coincide con el RUT de la reserva
+                List<String> clientsRUT = List.of(booking.getClientsRUT().split(","));
+                if (clientsRUT.get(0).equals(rut)) {
+                    filteredBookings.add(booking);
+                }
+            }
+        }
+        return filteredBookings;
+    }
+
+    /**
+     * Método para obtener una lista de reservas por fecha
+     * @param date fecha de la reserva
+     * @return lista de horas de reserva
+     */
+    public List<LocalTime> getTimesByDate(LocalDate date){
+        List<EntityBooking> bookings = repoBooking.findByBookingDate(date);
+        List<LocalTime> times = new ArrayList<>();
+        for (EntityBooking booking : bookings) {
+            times.add(booking.getBookingTime());
+        }
+        return times;
+    }
+
+    /**
+     * Método para obtener una lista de reservas por fecha final
+     * @param date fecha de la reserva
+     * @return lista de horas de reserva
+     */
+    public List<LocalTime> getTimesEndByDate(LocalDate date){
+        List<EntityBooking> bookings = repoBooking.findByBookingDate(date);
+        List<LocalTime> times = new ArrayList<>();
+        for (EntityBooking booking : bookings) {
+            times.add(booking.getBookingTimeEnd());
+        }
+        return times;
+    }
+
+    /**
+     * Método para obtener una lista de reservas confirmadas
+     * @return lista de reservas confirmadas
+     */
+    public List<EntityBooking> getConfirmedBookings() {
+        return repoBooking.findByBookingStatusContains("confirmada");
+    }
+
+    //----------------------------------------------------------------
+    // --- Método para obtener reservas para el rack semanal ---
+    //----------------------------------------------------------------
+
+    /**
+     * Método para obtener una lista de reservas confirmadas por fecha (Mes/Año)
+     * @param status Estado de la reserva
+     * @param month Mes de la reserva
+     * @param year Año de la reserva
+     * @return lista de reservas
+     */
+    @GetMapping("/findByBookingStatusMonthYear/{status}/{month}/{year}")
+    public List<EntityBooking> findByStatusAndMonthAndYear(@PathVariable String status, @PathVariable String month, @PathVariable String year){
+        return serviceBooking.findByStatusAndMonthAndYear(status, month, year);
+    }
+
+    @GetMapping("/findByBookingDate/{bookingDate}")
+    public List<EntityBooking> findByBookingDate(@PathVariable LocalDate bookingDate){
+        return serviceBooking.findByBookingDate(bookingDate);
+    }
+
+    @GetMapping("/findByClientsRUTContains/{rut}")
+    public List<EntityBooking> findByClientsRUTContains(@PathVariable String rut){
+        return serviceBooking.findByClientsRUTContains(rut);
+    }
+
+
+    //----------------------------------------------------------------
+    // --- Método para obtener una lista de reservas de un cliente ---
+    //----------------------------------------------------------------
 
     @GetMapping("/findByStatusDayTimeAllowed/{status}/{month}/{maxTimeAllowed}")
     public ResponseEntity<List<EntityBooking>> findByStatusAndDayAndLapsOrMaxTime(@PathVariable String status, @PathVariable String month, @PathVariable Integer maxTimeAllowed) {

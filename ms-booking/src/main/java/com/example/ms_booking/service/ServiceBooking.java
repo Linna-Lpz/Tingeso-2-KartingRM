@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -163,6 +164,36 @@ public class ServiceBooking {
 
     public Integer discountForBirthday(String clientBirthday, String bookingDayMonth, int basePrice) {
         return restTemplate.getForObject("http://ms-special-rates/special-rates/discount/" + clientBirthday + "/" + bookingDayMonth + "/" + basePrice, Integer.class);
+    }
+
+    /**
+     * Método para obtener una lista de reservas
+     * @return lista de reservas
+     */
+    public List<EntityBooking> getBookings() {
+        return repoBooking.findByBookingStatusContains("confirmada");
+    }
+
+    /**
+     * Método para confirmar una reserva
+     * @param bookingId id de la reserva
+     */
+    public void confirmBooking(Long bookingId) {
+        EntityBooking booking = repoBooking.findById(bookingId)
+                .orElseThrow(() -> new RuntimeException("Reserva no encontrada con ID: " + bookingId));
+        booking.setBookingStatus("confirmada");
+        repoBooking.save(booking);
+    }
+
+    /**
+     * Método para cancelar una reserva
+     * @param bookingId id de la reserva
+     */
+    public void cancelBooking(Long bookingId) {
+        EntityBooking booking = repoBooking.findById(bookingId)
+                .orElseThrow(() -> new RuntimeException("Reserva no encontrada con ID: " + bookingId));
+        booking.setBookingStatus("cancelada");
+        repoBooking.save(booking);
     }
 
 }

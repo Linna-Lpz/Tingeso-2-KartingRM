@@ -1,9 +1,12 @@
 package com.example.ms_reports.service;
 
-import com.example.ms_reports.entity.EntityReport;
-import com.example.ms_reports.repository.RepoReport;
+import com.example.ms_reports.dto.EntityBookingDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +14,7 @@ import java.util.List;
 @Service
 public class ServiceReport {
     @Autowired
-    RepoReport repoReport;
+    private RestTemplate restTemplate;
 
     /**
      * Método para obtener una LISTA de ingresos por mes según número de vueltas
@@ -25,8 +28,8 @@ public class ServiceReport {
         incomes.add(lapsOrTimeMax);
         for (int month = 1; month <= 12; month++) {
             String monthString = String.format("%02d", month);
-            System.out.println("Mes: " + monthString);//
             Integer income = getIncomesForTimeAndMonth(lapsOrTimeMax, monthString);
+            System.out.println("Mes: " + monthString + ", Ingreso: " + income);//
             totalIncomes += income;
             incomes.add(income);
         }
@@ -41,9 +44,9 @@ public class ServiceReport {
      * @return ingresos totales
      */
     public Integer getIncomesForTimeAndMonth(Integer lapsOrTimeMax, String month) {
-        List<EntityReport> bookings = repoReport.findByStatusAndDayAndLapsOrMaxTime("confirmada", month, lapsOrTimeMax);
+        List<EntityBookingDTO> bookings = findByStatusAndDayAndLapsOrMaxTime("confirmada", month, lapsOrTimeMax);
         Integer incomes = 0;
-        for (EntityReport booking : bookings) {
+        for (EntityBookingDTO booking : bookings) {
             Integer numOfPeople = booking.getNumOfPeople();
             Integer price = Integer.parseInt(booking.getBasePrice());
             incomes += (price * numOfPeople);
@@ -68,6 +71,20 @@ public class ServiceReport {
         Integer value3 = getIncomesForMonthOfLaps(20).get(13);
         totalIncomes.add(value1 + value2 + value3);
         return totalIncomes;
+    }
+
+    public List<EntityBookingDTO> findByStatusAndDayAndLapsOrMaxTime(String status, String month, Integer maxTimeAllowed){
+        String url = "http://ms-booking/booking/findByStatusDayTimeAllowed/" + status + "/" + month + "/" + maxTimeAllowed;
+
+        ResponseEntity<List<EntityBookingDTO>> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                }
+        );
+
+        return response.getBody();
     }
 
     // ------------------------- REPORTE 2 -----------------------------------------
@@ -101,20 +118,20 @@ public class ServiceReport {
      * @return ingresos totales
      */
     public Integer getIncomesForNumOfPeople(Integer people, String month) {
-        List<EntityReport> bookings = new ArrayList<>();
+        List<EntityBookingDTO> bookings = new ArrayList<>();
         if (people == 1 || people == 2) {
-            bookings = repoReport.findByStatusAndDayAndNumOfPeople1or2("confirmada", month, people);
+            bookings = findByStatusAndDayAndNumOfPeople1or2("confirmada", month, people);
         } else if (people >= 3 && people <= 5) {
-            bookings = repoReport.findByStatusAndDayAndNumOfPeople3to5("confirmada", month, people);
+            bookings = findByStatusAndDayAndNumOfPeople3to5("confirmada", month, people);
         } else if (people >= 6 && people <= 10) {
-            bookings = repoReport.findByStatusAndDayAndNumOfPeople6to10("confirmada", month, people);
+            bookings = findByStatusAndDayAndNumOfPeople6to10("confirmada", month, people);
         } else if (people >= 11 && people <= 15) {
-            bookings = repoReport.findByStatusAndDayAndNumOfPeople11to15("confirmada", month, people);
+            bookings = findByStatusAndDayAndNumOfPeople11to15("confirmada", month, people);
         } else {
             System.out.println("Error: Número de personas no válido");
         }
         Integer incomes = 0;
-        for (EntityReport booking : bookings) {
+        for (EntityBookingDTO booking : bookings) {
             Integer numOfPeople = booking.getNumOfPeople();
             Integer price = Integer.parseInt(booking.getBasePrice());
             incomes += (price * numOfPeople);
@@ -141,5 +158,61 @@ public class ServiceReport {
         Integer value4 = getIncomesForMonthOfNumOfPeople(15).get(13);
         totalIncomes.add(value1 + value2 + value3 + value4);
         return totalIncomes;
+    }
+
+    public List<EntityBookingDTO> findByStatusAndDayAndNumOfPeople1or2(String status, String month, Integer numOfPeople){
+        String url = "http://ms-booking/booking/findByStatusDayPeople1/" + status + "/" + month + "/" + numOfPeople;
+
+        ResponseEntity<List<EntityBookingDTO>> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                }
+        );
+
+        return response.getBody();
+    }
+
+    public List<EntityBookingDTO> findByStatusAndDayAndNumOfPeople3to5(String status, String month, Integer numOfPeople){
+        String url = "http://ms-booking/booking/findByStatusDayPeople2/" + status + "/" + month + "/" + numOfPeople;
+
+        ResponseEntity<List<EntityBookingDTO>> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                }
+        );
+
+        return response.getBody();
+    }
+
+    public List<EntityBookingDTO> findByStatusAndDayAndNumOfPeople6to10(String status, String month, Integer numOfPeople){
+        String url = "http://ms-booking/booking/findByStatusDayPeople3/" + status + "/" + month + "/" + numOfPeople;
+
+        ResponseEntity<List<EntityBookingDTO>> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                }
+        );
+
+        return response.getBody();
+    }
+
+    public List<EntityBookingDTO> findByStatusAndDayAndNumOfPeople11to15(String status, String month, Integer numOfPeople){
+        String url = "http://ms-booking/booking/findByStatusDayPeople4/" + status + "/" + month + "/" + numOfPeople;
+
+        ResponseEntity<List<EntityBookingDTO>> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                }
+        );
+
+        return response.getBody();
     }
 }

@@ -51,4 +51,33 @@ public class ControlBooking {
         serviceBooking.cancelBooking(bookingId);
         return ResponseEntity.ok("Reserva cancelada");
     }
+
+    @GetMapping("/findByStatusDayTimeAllowed/{status}/{month}/{maxTimeAllowed}")
+    public ResponseEntity<List<EntityBooking>> findByStatusAndDayAndLapsOrMaxTime(@PathVariable String status, @PathVariable String month, @PathVariable Integer maxTimeAllowed) {
+        List<EntityBooking> bookings = serviceBooking.findByStatusAndDayAndLapsOrMaxTime(status, month, maxTimeAllowed);
+        return ResponseEntity.ok(bookings);
+    }
+
+    @GetMapping("/findByStatusDayPeople1/{status}/{month}/{numOfPeople}")
+    public ResponseEntity<List<EntityBooking>> findByStatusAndDayAndNumOfPeople1or2(@PathVariable String status, @PathVariable String month, @PathVariable Integer numOfPeople) {
+        List<EntityBooking> bookings = serviceBooking.findByStatusAndDayAndNumOfPeople1or2(status, month, numOfPeople);
+        return ResponseEntity.ok(bookings);
+    }
+
+    @GetMapping("/findByStatusDayPeople2/{status}/{month}/{numOfPeople}")
+    public ResponseEntity<List<EntityBooking>> findByStatusAndDayAndNumOfPeople3to5(@PathVariable String status, @PathVariable String month, @PathVariable Integer numOfPeople) {
+        List<EntityBooking> bookings = serviceBooking.findByStatusAndDayAndNumOfPeople3to5(status, month, numOfPeople);
+        return ResponseEntity.ok(bookings);
+    }
+
+    @GetMapping("/findByStatusDayPeople3/{status}/{month}/{numOfPeople}")
+    public ResponseEntity<List<EntityBooking>> findByStatusAndDayAndNumOfPeople6to10(@PathVariable String status, @PathVariable String month, @PathVariable Integer numOfPeople) {
+        List<EntityBooking> bookings = serviceBooking.findByStatusAndDayAndNumOfPeople6to10(status, month, numOfPeople);
+        return ResponseEntity.ok(bookings);
+    }
+    @GetMapping("/findByStatusDayPeople4/{status}/{month}/{numOfPeople}")
+    public ResponseEntity<List<EntityBooking>> findByStatusAndDayAndNumOfPeople11to15(@PathVariable String status, @PathVariable String month, @PathVariable Integer numOfPeople) {
+        List<EntityBooking> bookings = serviceBooking.findByStatusAndDayAndNumOfPeople11to15(status, month, numOfPeople);
+        return ResponseEntity.ok(bookings);
+    }
 }

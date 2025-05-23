@@ -129,6 +129,13 @@ public class ServiceBooking {
         booking.setDiscounts(discountsListType.toString()); // Lista de descuentos aplicados (cumpleaños, visitas, integrantes)
         booking.setTotalPrice(discountsList.toString()); // Lista de precios con descuento
 
+        // Calcular el total con IVA
+        String totalWithIva = calculateTotalWithIva(booking.getTotalPrice(), booking.getIva());
+        booking.setTotalWithIva(totalWithIva);
+
+        // Calcular el monto total a pagar
+        booking.setTotalAmount(calculateTotalPrice(totalWithIva));
+
         // Establecer estado de la reserva
         booking.setBookingStatus("sin confirmar");
 
@@ -167,6 +174,44 @@ public class ServiceBooking {
     }
 
     /**
+     * Método para calcular el precio total con IVA
+     * @param totalPrice precio total a pagar por cada cliente
+     * @param iva porcentaje de IVA
+     * @return precio total con IVA
+     */
+    public String calculateTotalWithIva(String totalPrice, String iva) {
+        Integer ivaI = Integer.parseInt(iva);
+        List<String> totalPriceList = List.of(totalPrice.split(","));
+        StringBuilder totalWithIva = new StringBuilder();
+        for (String total : totalPriceList) {
+            Integer price = Integer.parseInt(total);
+            System.out.println("Precio base: " + price);
+            Integer totalWithIvaValue = price + ((price * ivaI) / 100);
+            System.out.println("Precio total con IVA: " + totalWithIvaValue);
+            totalWithIva.append(totalWithIvaValue).append(",");
+        }
+        if (totalWithIva.length() > 0) {
+            totalWithIva.setLength(totalWithIva.length() - 1); // Elimina la última coma
+        }
+        return totalWithIva.toString();
+    }
+
+    /**
+     * Método para calcular el precio total a pagar
+     * @param totalWithIva precio total con IVA
+     * @return precio total a pagar
+     */
+    public Integer calculateTotalPrice(String totalWithIva) {
+        Integer totalPrice = 0;
+        List<String> totalWithIvaList = List.of(totalWithIva.split(","));
+        for (String total : totalWithIvaList) {
+            Integer price = Integer.parseInt(total);
+            totalPrice += price;
+        }
+        return totalPrice;
+    }
+
+    /**
      * Método para obtener una lista de reservas
      * @return lista de reservas
      */
@@ -194,6 +239,28 @@ public class ServiceBooking {
                 .orElseThrow(() -> new RuntimeException("Reserva no encontrada con ID: " + bookingId));
         booking.setBookingStatus("cancelada");
         repoBooking.save(booking);
+    }
+
+
+    // Métodos para obtener reservas para el reporte
+    public List<EntityBooking> findByStatusAndDayAndLapsOrMaxTime(String status, String month, Integer maxTimeAllowed) {
+        return repoBooking.findByStatusAndDayAndLapsOrMaxTime(status, month, maxTimeAllowed);
+    }
+
+    public List<EntityBooking> findByStatusAndDayAndNumOfPeople1or2(String status, String month, Integer numOfPeople) {
+        return repoBooking.findByStatusAndDayAndNumOfPeople1or2(status, month, numOfPeople);
+    }
+
+    public List<EntityBooking> findByStatusAndDayAndNumOfPeople3to5(String status, String month, Integer numOfPeople) {
+        return repoBooking.findByStatusAndDayAndNumOfPeople3to5(status, month, numOfPeople);
+    }
+
+    public List<EntityBooking> findByStatusAndDayAndNumOfPeople6to10(String status, String month, Integer numOfPeople) {
+        return repoBooking.findByStatusAndDayAndNumOfPeople6to10(status, month, numOfPeople);
+    }
+
+    public List<EntityBooking> findByStatusAndDayAndNumOfPeople11to15(String status, String month, Integer numOfPeople) {
+        return repoBooking.findByStatusAndDayAndNumOfPeople11to15(status, month, numOfPeople);
     }
 
 }

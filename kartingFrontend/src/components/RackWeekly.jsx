@@ -30,10 +30,25 @@ const RackWeekly = () => {
   const months = Array.from({ length: 12 }, (_, i) => i);
   const years = Array.from({ length: 5 }, (_, i) => getYear(currentDate) - 2 + i);
 
-  // Cargar reservas cuando cambia la semana
+  // Obtener reservas del servicio
+  const fetchBookings = async () => {
+    try {
+      // Llama a la función pasando mes y año seleccionados
+      const response = await bookingService.getBookingsForRack(selectedMonth + 1, selectedYear);
+      console.log("Response from bookingService:", response);
+      setBookings(response.data);
+      setError(null);
+    } catch (err) {
+      console.error("Error al obtener las reservas:", err);
+      setError("No se pudieron cargar las reservas. Por favor, intente de nuevo más tarde.");
+    }
+  };
+
+  // Cargar reservas cuando cambia la semana, mes o año
   useEffect(() => {
     fetchBookings();
-  }, [weekStart]);
+    // eslint-disable-next-line
+  }, [weekStart, selectedMonth, selectedYear]);
 
   // Actualizar la semana cuando cambia el mes o año
   useEffect(() => {
@@ -44,18 +59,6 @@ const RackWeekly = () => {
     const firstWeekOfMonth = startOfWeek(startOfMonth(newDate), { weekStartsOn: 1 });
     setWeekStart(firstWeekOfMonth);
   }, [selectedMonth, selectedYear]);
-
-  // Obtener reservas del servicio
-  const fetchBookings = async () => {
-    try {
-      const response = await bookingService.getBooking();
-      setBookings(response.data);
-      setError(null);
-    } catch (err) {
-      console.error("Error al obtener las reservas:", err);
-      setError("No se pudieron cargar las reservas. Por favor, intente de nuevo más tarde.");
-    }
-  };
 
   // Función para ir a la semana anterior
   const goToPreviousWeek = () => {

@@ -2,6 +2,7 @@ import axios from "axios";
 
 const BOOKING_API_URL = "http://localhost:8001/booking";
 const CLIENT_API_URL = "http://localhost:8001/client";
+const VOUCHER_API_URL = "http://localhost:8001/voucher";
 const RACK_API_URL = "http://localhost:8004/rack";
 const REPORT_API_URL = "http://localhost:8006/reports";
 
@@ -14,16 +15,16 @@ function getBooking(){
     return axios.get(`${BOOKING_API_URL}/getBookings`);
 }
 
-function getBookingByUserRut(userRut){
-    return axios.get(`${BOOKING_API_URL}/getBookings/${userRut}`);
+function getBookingByUserRut(rut){
+    return axios.get(`${BOOKING_API_URL}/getBookingsByUser/${rut}`);
 }
 
-function getBookingTimesByDate(date){
-    return axios.get(`${BOOKING_API_URL}/getBookingTimesByDate/${date}`);
+function getTimesByDate(date){
+    return axios.get(`${BOOKING_API_URL}/getTimesByDate/${date}`);
 }
 
-function getBookingTimesEndByDate(date){
-    return axios.get(`${BOOKING_API_URL}/getBookingTimesEndByDate/${date}`)
+function getTimesEndByDate(date){
+    return axios.get(`${BOOKING_API_URL}/getTimesEndByDate/${date}`)
 }
 
 function confirmBooking(bookingId){
@@ -38,8 +39,10 @@ function getConfirmedBookings(){
     return axios.get(`${BOOKING_API_URL}/getConfirmedBookings`);
 }
 
-function sendVoucherByEmail(bookingId){
-    return axios.post(`${BOOKING_API_URL}/send/${bookingId}`);
+// ------------------ Voucher ------------------
+
+function sendVoucherByEmail (bookingId){
+    return axios.post(`${VOUCHER_API_URL}/send/${bookingId}`);
 }
 // ------------------ Rack ------------------
 function getBookingsForRack(month, year){
@@ -80,8 +83,8 @@ export default {
     saveBooking,
     getBooking,
     getBookingByUserRut,
-    getBookingTimesByDate,
-    getBookingTimesEndByDate,
+    getTimesByDate,
+    getTimesEndByDate,
     getConfirmedBookings,
     confirmBooking,
     cancelBooking,

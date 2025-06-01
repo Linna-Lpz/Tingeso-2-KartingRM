@@ -18,4 +18,10 @@ public class ControlClient {
         serviceClient.saveClient(client);
         return ResponseEntity.ok(client);
     }
+
+    @GetMapping("/get/{rut}")
+    public ResponseEntity<EntityClient> getClientByRut(@PathVariable String rut) {
+        EntityClient client = serviceClient.getClientByRut(rut);
+        return ResponseEntity.ok(client);
+    }
 }

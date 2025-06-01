@@ -45,8 +45,8 @@ const KartBookingForm = () => {
     const formattedDate = date.toISOString().split('T')[0]; // Formato YYYY-MM-DD
     try {
       const [startResponse, endResponse] = await Promise.all([
-        bookingService.getBookingTimesByDate(formattedDate),
-        bookingService.getBookingTimesEndByDate(formattedDate)
+        bookingService.getTimesByDate(formattedDate),
+        bookingService.getTimesEndByDate(formattedDate)
       ]);
   
       console.log('Horarios de inicio:', startResponse.data);

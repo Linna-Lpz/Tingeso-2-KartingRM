@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const BOOKING_API_URL = "http://localhost:8001/api/booking";
-const CLIENT_API_URL = "http://localhost:8001/api/booking";
+const BOOKING_API_URL = "http://localhost:8001/booking";
+const CLIENT_API_URL = "http://localhost:8001/client";
+const RACK_API_URL = "http://localhost:8004/rack";
 const REPORT_API_URL = "http://localhost:8006/reports";
 
 // ------------------ Booking ------------------
@@ -39,6 +40,10 @@ function getConfirmedBookings(){
 
 function sendVoucherByEmail(bookingId){
     return axios.post(`${BOOKING_API_URL}/send/${bookingId}`);
+}
+// ------------------ Rack ------------------
+function getBookingsForRack(month, year){
+    return axios.get(`${RACK_API_URL}/getBookingsForRack/${month}/${year}`);
 }
 
 // ------------------ Report ------------------
@@ -82,7 +87,10 @@ export default {
     cancelBooking,
     saveClient,
     sendVoucherByEmail,
+    getBookingsForRack,
     getBookingsForReport1,
     getIncomesForLapsOfMonth,
+    getBookingsForReport2,
+    getIncomesForNumOfPeopleOfMonth,
     getClientByRut
 };

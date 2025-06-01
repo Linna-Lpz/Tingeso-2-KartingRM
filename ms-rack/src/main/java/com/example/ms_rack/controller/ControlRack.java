@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/rack")
+@CrossOrigin(origins = "*")
 public class ControlRack {
     @Autowired
     ServiceRack serviceRack;

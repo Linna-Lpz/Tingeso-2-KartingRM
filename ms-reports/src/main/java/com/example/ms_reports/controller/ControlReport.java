@@ -3,15 +3,13 @@ package com.example.ms_reports.controller;
 import com.example.ms_reports.service.ServiceReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/reports")
+@CrossOrigin(origins = "*")
 public class ControlReport {
     @Autowired
     ServiceReport serviceReport;

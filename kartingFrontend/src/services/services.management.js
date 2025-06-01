@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const BOOKING_API_URL = "http://74.163.96.5/api/booking";
-const CLIENT_API_URL = "http://74.163.96.5/api/client";
-const REPORT_API_URL = "http://74.163.96.5/api/report";
+const BOOKING_API_URL = "http://localhost:8001/api/booking";
+const CLIENT_API_URL = "http://localhost:8001/api/booking";
+const REPORT_API_URL = "http://localhost:8006/reports";
 
 // ------------------ Booking ------------------
 function saveBooking(data) {

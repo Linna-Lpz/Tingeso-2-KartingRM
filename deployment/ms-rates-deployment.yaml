@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-rates-deployment
+  labels:
+    app: ms-rates-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ms-rates-deployment
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ms-rates-deployment
+    spec:
+      containers:
+        - name: ms-rates
+          image: calpz/ms-rates-image
+          ports:
+            - containerPort: 8005
+          env:
+            - name: SERVER_PORT
+              value: "0"

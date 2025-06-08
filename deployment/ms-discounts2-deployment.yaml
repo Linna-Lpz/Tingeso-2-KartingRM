@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-discounts2-deployment
+  labels:
+    app: ms-discounts2-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ms-discounts2-deployment
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ms-discounts2-deployment
+    spec:
+      containers:
+        - name: ms-discounts2
+          image: calpz/ms-discounts2-image
+          ports:
+            - containerPort: 8003
+          env:
+            - name: SERVER_PORT
+              value: "0"

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-special-rates-deployment
+  labels:
+    app: ms-special-rates-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ms-special-rates-deployment
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ms-special-rates-deployment
+    spec:
+      containers:
+        - name: ms-special-rates
+          image: calpz/ms-special-rates-image
+          ports:
+            - containerPort: 8007
+          env:
+            - name: SERVER_PORT
+              value: "0"

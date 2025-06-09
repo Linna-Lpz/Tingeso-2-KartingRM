@@ -5,59 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45352177-2f58-4dcf-a0a3-832bc322fbdb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/config-service/target/classes/com/example/config_service/ConfigServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/classes/com/example/config_service/ConfigServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/target/test-classes/com/example/config_service/ConfigServiceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/target/test-classes/com/example/config_service/ConfigServiceApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/karting-frontend-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/karting-frontend-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-service/target/classes/com/example/eureka_service/EurekaServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/target/classes/com/example/eureka_service/EurekaServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-service/target/test-classes/com/example/eureka_service/EurekaServiceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/target/test-classes/com/example/eureka_service/EurekaServiceApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/target/classes/com/example/gateway_service/GatewayServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/target/classes/com/example/gateway_service/GatewayServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/target/test-classes/com/example/gateway_service/GatewayServiceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/target/test-classes/com/example/gateway_service/GatewayServiceApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/MsBookingApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/MsBookingApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/config/RestTemplateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/config/RestTemplateConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/controller/ControlBooking.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/controller/ControlBooking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/controller/ControlClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/controller/ControlClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/controller/ControlVoucher.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/controller/ControlVoucher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/entity/EntityBooking.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/entity/EntityBooking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/entity/EntityClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/entity/EntityClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/repository/RepoBooking.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/repository/RepoBooking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/repository/RepoClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/repository/RepoClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/service/ServiceBooking.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/service/ServiceBooking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/service/ServiceClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/service/ServiceClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/service/ServiceVoucher.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/classes/com/example/ms_booking/service/ServiceVoucher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-booking/target/test-classes/com/example/ms_booking/MsBookingApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/target/test-classes/com/example/ms_booking/MsBookingApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts1/target/classes/com/example/ms_discounts1/MsDiscounts1Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts1/target/classes/com/example/ms_discounts1/MsDiscounts1Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts1/target/classes/com/example/ms_discounts1/controller/ControlDiscounts1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts1/target/classes/com/example/ms_discounts1/controller/ControlDiscounts1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts1/target/classes/com/example/ms_discounts1/service/ServiceDiscounts1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts1/target/classes/com/example/ms_discounts1/service/ServiceDiscounts1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts1/target/test-classes/com/example/ms_discounts1/MsDiscounts1ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts1/target/test-classes/com/example/ms_discounts1/MsDiscounts1ApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts2/target/classes/com/example/ms_discounts2/MsDiscounts2Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts2/target/classes/com/example/ms_discounts2/MsDiscounts2Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts2/target/classes/com/example/ms_discounts2/controller/ControlDiscounts2.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts2/target/classes/com/example/ms_discounts2/controller/ControlDiscounts2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts2/target/classes/com/example/ms_discounts2/service/ServiceDiscounts2.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts2/target/classes/com/example/ms_discounts2/service/ServiceDiscounts2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts2/target/test-classes/com/example/ms_discounts2/MsDiscounts2ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts2/target/test-classes/com/example/ms_discounts2/MsDiscounts2ApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/MsRackApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/MsRackApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/controller/ControlRack.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/controller/ControlRack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/entity/EntityRack.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/entity/EntityRack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/repository/RepoRack.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/repository/RepoRack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/service/ServiceRack.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rack/target/classes/com/example/ms_rack/service/ServiceRack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rack/target/test-classes/com/example/ms_rack/MsRackApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rack/target/test-classes/com/example/ms_rack/MsRackApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rates/target/classes/com/example/ms_rates/MsRatesApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rates/target/classes/com/example/ms_rates/MsRatesApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rates/target/classes/com/example/ms_rates/controller/ControlRates.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rates/target/classes/com/example/ms_rates/controller/ControlRates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rates/target/classes/com/example/ms_rates/service/ServiceRates.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rates/target/classes/com/example/ms_rates/service/ServiceRates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rates/target/test-classes/com/example/ms_rates/MsRatesApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rates/target/test-classes/com/example/ms_rates/MsRatesApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/MsReportsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/MsReportsApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/config/RestTemplateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/config/RestTemplateConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/controller/ControlReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/controller/ControlReport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/dto/EntityBookingDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/dto/EntityBookingDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/classes/com/example/ms_reports/service/ServiceReport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/target/test-classes/com/example/ms_reports/MsReportsApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/target/test-classes/com/example/ms_reports/MsReportsApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-special-rates/target/classes/com/example/ms_special_rates/MsSpecialRatesApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-special-rates/target/classes/com/example/ms_special_rates/MsSpecialRatesApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-special-rates/target/classes/com/example/ms_special_rates/controller/ControlSpecialRates.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-special-rates/target/classes/com/example/ms_special_rates/controller/ControlSpecialRates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-special-rates/target/classes/com/example/ms_special_rates/service/ServiceSpecialRates.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-special-rates/target/classes/com/example/ms_special_rates/service/ServiceSpecialRates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-special-rates/target/test-classes/com/example/ms_special_rates/MsSpecialRatesApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/ms-special-rates/target/test-classes/com/example/ms_special_rates/MsSpecialRatesApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/karting-frontend-deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/Dockerfilerundev" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/Dockerfilerundev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/eslint.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/nginx/conf.d/frontend.conf" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/nginx/conf.d/frontend.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/public/vite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/public/vite.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/assets/react.svg" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/assets/react.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/ClientRegister.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/ClientRegister.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/KartBookingForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/KartBookingForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Menu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Navegate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Navegate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/RackWeekly.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/RackWeekly.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Reports.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Reports.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/StatusKartBooking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/StatusKartBooking.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/services/services.management.js" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/services/services.management.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kartingFrontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,10 +41,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
@@ -87,15 +61,25 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.config-service [clean].executor": "Run",
     "Maven.config-service [install].executor": "Run",
+    "Maven.eureka-service [clean].executor": "Run",
     "Maven.eureka-service [install].executor": "Run",
+    "Maven.gateway-service [clean].executor": "Run",
     "Maven.gateway-service [install].executor": "Run",
+    "Maven.ms-booking [clean].executor": "Run",
     "Maven.ms-booking [install].executor": "Run",
+    "Maven.ms-discounts1 [clean].executor": "Run",
     "Maven.ms-discounts1 [install].executor": "Run",
+    "Maven.ms-discounts2 [clean].executor": "Run",
     "Maven.ms-discounts2 [install].executor": "Run",
+    "Maven.ms-rack [clean].executor": "Run",
     "Maven.ms-rack [install].executor": "Run",
+    "Maven.ms-rates [clean].executor": "Run",
     "Maven.ms-rates [install].executor": "Run",
+    "Maven.ms-reports [clean].executor": "Run",
     "Maven.ms-reports [install].executor": "Run",
+    "Maven.ms-special-rates [clean].executor": "Run",
     "Maven.ms-special-rates [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -228,7 +212,8 @@
       <workItem from="1748729194419" duration="602000" />
       <workItem from="1749410920895" duration="45000" />
       <workItem from="1749411000212" duration="23000" />
-      <workItem from="1749411065870" duration="14983000" />
+      <workItem from="1749411065870" duration="25808000" />
+      <workItem from="1749474265809" duration="945000" />
     </task>
     <servers />
   </component>

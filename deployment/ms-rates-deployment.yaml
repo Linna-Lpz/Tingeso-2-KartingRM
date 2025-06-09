@@ -17,6 +17,7 @@ spec:
       containers:
         - name: ms-rates
           image: calpz/ms-rates-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8005
           env:

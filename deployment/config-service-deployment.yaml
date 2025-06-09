@@ -17,6 +17,7 @@ spec:
       containers:
         - name: config-service
           image: calpz/config-service-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8888
 ---

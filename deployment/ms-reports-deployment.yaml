@@ -17,6 +17,7 @@ spec:
       containers:
         - name: ms-reports
           image: calpz/ms-reports-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8006
           env:

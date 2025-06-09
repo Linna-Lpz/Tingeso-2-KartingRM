@@ -17,7 +17,6 @@ spec:
       containers:
         - name: karting2-frontend-container
           image: calpz/karting2-frontend-image
-          imagePullPolicy: Always
           ports:
             - containerPort: 3000
 

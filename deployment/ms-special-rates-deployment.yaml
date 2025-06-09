@@ -17,6 +17,7 @@ spec:
       containers:
         - name: ms-special-rates
           image: calpz/ms-special-rates-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8007
           env:

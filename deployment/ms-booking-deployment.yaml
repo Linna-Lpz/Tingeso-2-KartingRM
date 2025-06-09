@@ -18,6 +18,7 @@ spec:
       containers:
         - name: ms-booking
           image: calpz/ms-booking-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8001
           env:

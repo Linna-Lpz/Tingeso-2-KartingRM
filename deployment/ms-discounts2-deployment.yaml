@@ -17,6 +17,7 @@ spec:
       containers:
         - name: ms-discounts2
           image: calpz/ms-discounts2-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8003
           env:

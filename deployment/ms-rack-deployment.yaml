@@ -18,6 +18,7 @@ spec:
       containers:
         - name: ms-rack
           image: calpz/ms-rack-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8004
           env:

@@ -17,6 +17,7 @@ spec:
       containers:
         - name: gateway-service
           image: calpz/gateway-service-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---

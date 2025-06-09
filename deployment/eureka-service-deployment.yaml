@@ -17,6 +17,7 @@ spec:
       containers:
         - name: eureka-service
           image: calpz/eureka-service-image
+          imagePullPolicy: Always
           ports:
             - containerPort: 8761
 ---

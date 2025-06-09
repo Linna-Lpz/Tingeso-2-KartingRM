@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45352177-2f58-4dcf-a0a3-832bc322fbdb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/eureka-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/eureka-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/gateway-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/ms-booking.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/ms-booking.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/ms-discounts1.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/ms-discounts1.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/ms-discounts2.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/ms-discounts2.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/ms-rack.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/ms-rack.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/ms-rates.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/ms-rates.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/ms-reports.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/ms-reports.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-data/ms-special-rates.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-data/ms-special-rates.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/postgres-config-map.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/postgres-config-map.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="45352177-2f58-4dcf-a0a3-832bc322fbdb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +174,7 @@
       <workItem from="1748729194419" duration="602000" />
       <workItem from="1749410920895" duration="45000" />
       <workItem from="1749411000212" duration="23000" />
-      <workItem from="1749411065870" duration="14209000" />
+      <workItem from="1749411065870" duration="14512000" />
     </task>
     <servers />
   </component>

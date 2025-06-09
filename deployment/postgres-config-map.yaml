@@ -5,9 +5,9 @@ metadata:
   labels:
     app: postgres-config-map
 data:
-  DB_HOST_BOOKING: booking-db-service
+  DB_HOST_BOOKING: "booking-db-service"
   DB_PORT_BOOKING: "5432"
-  DB_NAME_BOOKING: ms-booking-db
-  DB_HOST_RACK: rack-db-service
+  DB_NAME_BOOKING: "ms-booking-db"
+  DB_HOST_RACK: "rack-db-service"
   DB_PORT_RACK: "5432"
-  DB_NAME_RACK: ms-rack-db
+  DB_NAME_RACK: "ms-rack-db"

@@ -6,32 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="45352177-2f58-4dcf-a0a3-832bc322fbdb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/karting-frontend-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/Dockerfilerundev" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/Dockerfilerundev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/eslint.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/nginx/conf.d/frontend.conf" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/nginx/conf.d/frontend.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/public/vite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/public/vite.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/assets/react.svg" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/assets/react.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/ClientRegister.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/ClientRegister.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/KartBookingForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/KartBookingForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Navegate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Navegate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/RackWeekly.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/RackWeekly.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/Reports.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/Reports.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/components/StatusKartBooking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/components/StatusKartBooking.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/src/services/services.management.js" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/services/services.management.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kartingFrontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +187,7 @@
       <workItem from="1749410920895" duration="45000" />
       <workItem from="1749411000212" duration="23000" />
       <workItem from="1749411065870" duration="25808000" />
-      <workItem from="1749474265809" duration="945000" />
+      <workItem from="1749474265809" duration="4208000" />
     </task>
     <servers />
   </component>

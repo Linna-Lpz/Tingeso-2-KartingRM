@@ -17,10 +17,16 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: '*'
-            allowedMethods: "*"
+            allowedOriginPatterns: "*"
+            allowedMethods: 
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
             allowedHeaders: "*"
-            allowCredentials: true
+            allowCredentials: false
+            maxAge: 3600
       routes:
         - id: ms-booking
           uri: lb://ms-booking

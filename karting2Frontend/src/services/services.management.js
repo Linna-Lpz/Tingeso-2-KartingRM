@@ -1,12 +1,13 @@
 import axios from "axios";
 
-const GATEWAY_INTERNAL_URL = " http://127.0.0.1:58123";
+const GATEWAY_INTERNAL_URL = "http://127.0.0.1:59784";
 
+// Rutas corregidas según el gateway
 const BOOKING_API_URL = `${GATEWAY_INTERNAL_URL}/booking`;
-const CLIENT_API_URL = `${GATEWAY_INTERNAL_URL}/client`;
-const VOUCHER_API_URL = `${GATEWAY_INTERNAL_URL}/voucher`;
+const CLIENT_API_URL = `${GATEWAY_INTERNAL_URL}/booking`; // Cliente está en ms-booking
+const VOUCHER_API_URL = `${GATEWAY_INTERNAL_URL}/booking`; // Voucher está en ms-booking
 const RACK_API_URL = `${GATEWAY_INTERNAL_URL}/rack`;
-const REPORT_API_URL = `${GATEWAY_INTERNAL_URL}/report`;
+const REPORT_API_URL = `${GATEWAY_INTERNAL_URL}/reports`; // Corregido: reports (plural)
 
 // ------------------ Booking ------------------
 function saveBooking(data) {
@@ -42,17 +43,16 @@ function getConfirmedBookings(){
 }
 
 // ------------------ Voucher ------------------
-
 function sendVoucherByEmail (bookingId){
-    return axios.post(`${VOUCHER_API_URL}/send/${bookingId}`);
+    return axios.post(`${VOUCHER_API_URL}/voucher/send/${bookingId}`);
 }
+
 // ------------------ Rack ------------------
 function getBookingsForRack(month, year){
     return axios.get(`${RACK_API_URL}/getBookingsForRack/${month}/${year}`);
 }
 
 // ------------------ Report ------------------
-
 function getBookingsForReport1(lapsOrTimeMax){
     return axios.get(`${REPORT_API_URL}/getBookingsForReport1/${lapsOrTimeMax}`);
 }
@@ -71,16 +71,14 @@ function getIncomesForNumOfPeopleOfMonth(){
 
 // ------------------ Client ------------------
 function saveClient(client){
-    return axios.post(`${CLIENT_API_URL}/save`, client);
+    return axios.post(`${CLIENT_API_URL}/client/save`, client);
 }
 
 function getClientByRut(rut){
-    return axios.get(`${CLIENT_API_URL}/get/${rut}`);
+    return axios.get(`${CLIENT_API_URL}/client/get/${rut}`);
 }
 
-
 // ------------------ Export -------------------
-
 export default {
     saveBooking,
     getBooking,

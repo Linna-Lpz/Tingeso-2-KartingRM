@@ -23,3 +23,19 @@ spec:
           env:
             - name: SERVER_PORT
               value: "0"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-discounts1-service
+  labels:
+    app: ms-discounts1-service
+spec:
+  selector:
+    app: ms-discounts1-deployment
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
+  type: ClusterIP

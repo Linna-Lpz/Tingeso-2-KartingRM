@@ -23,3 +23,19 @@ spec:
           env:
             - name: SERVER_PORT
               value: "0"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-rates-service
+  labels:
+    app: ms-rates-service
+spec:
+  selector:
+    app: ms-rates-deployment
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
+  type: ClusterIP

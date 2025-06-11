@@ -20,6 +20,17 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          env:
+          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_GATEWAY
+            value: DEBUG
+          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_GATEWAY_FILTER
+            value: DEBUG
+          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_GATEWAY_ROUTE
+            value: DEBUG
+          - name: LOGGING_LEVEL_REACTOR_NETTY
+            value: DEBUG
+          - name: LOGGING_LEVEL_ROOT
+            value: INFO
 ---
 apiVersion: v1
 kind: Service

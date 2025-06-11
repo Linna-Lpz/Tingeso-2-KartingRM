@@ -28,36 +28,36 @@ spring:
             maxAge: 3600
       routes:
         - id: ms-booking
-          uri: lb://api/ms-booking
+          uri: lb:/ms-booking
           predicates:
-            - Path=/booking/**
+            - Path=/api/booking/**
 
         - id: ms-discounts1
-          uri: lb://api/ms-discounts1
+          uri: lb://ms-discounts1
           predicates:
-            - Path=/discounts1/**
+            - Path=/api/discounts1/**
 
         - id: ms-discounts2
-          uri: lb://api/ms-discounts2
+          uri: lb://ms-discounts2
           predicates:
-            - Path=/discounts2/**
+            - Path=/api/discounts2/**
 
         - id: ms-rack
-          uri: lb://api/ms-rack
+          uri: lb://ms-rack
           predicates:
-            - Path=/rack/**
+            - Path=/api/rack/**
 
         - id: ms-rates
-          uri: lb://api/ms-rates
+          uri: lb://ms-rates
           predicates:
-            - Path=/rates/**
+            - Path=/api/rates/**
 
         - id: ms-reports
-          uri: lb://api/ms-reports
+          uri: lb://ms-reports
           predicates:
-            - Path=/reports/**
+            - Path=/api/reports/**
 
         - id: ms-special-rates
-          uri: lb://api/ms-special-rates
+          uri: lb://ms-special-rates
           predicates:
-            - Path=/special-rates/**
+            - Path=/api/special-rates/**

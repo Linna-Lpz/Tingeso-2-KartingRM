@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45352177-2f58-4dcf-a0a3-832bc322fbdb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/karting2-frontend-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/karting2-frontend-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/karting2Frontend/src/services/services.management.js" beforeDir="false" afterPath="$PROJECT_DIR$/karting2Frontend/src/services/services.management.js" afterDir="false" />
-    </list>
-    <list id="295d40d1-37f4-40a5-83cb-88d4a87b90d8" name="Changes by solarc3" comment="">
-      <change beforePath="$PROJECT_DIR$/ms-booking/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ms-booking/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts1/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts1/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-discounts2/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discounts2/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rack/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rack/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-rates/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ms-rates/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-reports/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ms-reports/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-special-rates/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ms-special-rates/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

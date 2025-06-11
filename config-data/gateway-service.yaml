@@ -11,17 +11,10 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOriginPatterns:
-              - "http://127.0.0.1:*"
-              - "http://localhost:*"
-              - "http://192.168..:*"
+            allowedOrigins: "*"
             allowedMethods: "*"
             allowedHeaders: "*"
             allowCredentials: true

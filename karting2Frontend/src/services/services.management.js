@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const GATEWAY_INTERNAL_URL = "http://gateway-service-service";
+const GATEWAY_INTERNAL_URL = "http://127.0.0.1:59177";
 
-const BOOKING_API_URL = `${GATEWAY_INTERNAL_URL}/ms-booking`;
-const CLIENT_API_URL = `${GATEWAY_INTERNAL_URL}/ms-client`;
-const VOUCHER_API_URL = `${GATEWAY_INTERNAL_URL}/ms-voucher`;
-const RACK_API_URL = `${GATEWAY_INTERNAL_URL}/ms-rack`;
-const REPORT_API_URL = `${GATEWAY_INTERNAL_URL}/ms-report`;
+const BOOKING_API_URL = `${GATEWAY_INTERNAL_URL}/booking`;
+const CLIENT_API_URL = `${GATEWAY_INTERNAL_URL}/client`;
+const VOUCHER_API_URL = `${GATEWAY_INTERNAL_URL}/voucher`;
+const RACK_API_URL = `${GATEWAY_INTERNAL_URL}/rack`;
+const REPORT_API_URL = `${GATEWAY_INTERNAL_URL}/report`;
 
 // ------------------ Booking ------------------
 function saveBooking(data) {

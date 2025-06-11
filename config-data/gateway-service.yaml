@@ -20,6 +20,7 @@ spring:
             allowedOrigins: '*'
             allowedMethods: "*"
             allowedHeaders: "*"
+            allowCredentials: true
       routes:
         - id: ms-booking
           uri: lb://ms-booking

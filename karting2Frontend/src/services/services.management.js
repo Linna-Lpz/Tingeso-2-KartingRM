@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const GATEWAY_INTERNAL_URL = "http://127.0.0.1:59784";
+const GATEWAY_INTERNAL_URL = "http://127.0.0.1:60549";
 
 // Rutas corregidas según el gateway
 const BOOKING_API_URL = `${GATEWAY_INTERNAL_URL}/booking`;

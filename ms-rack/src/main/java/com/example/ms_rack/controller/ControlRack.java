@@ -17,7 +17,7 @@ import com.example.ms_rack.entity.EntityRack;
 import com.example.ms_rack.service.ServiceRack;
 
 @RestController
-@RequestMapping("/rack")
+@RequestMapping("/api/rack")
 
 public class ControlRack {
     @Autowired

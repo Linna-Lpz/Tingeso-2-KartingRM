@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/discounts1")
+@RequestMapping("/api/discounts1")
 public class ControlDiscounts1 {
     @Autowired
     ServiceDiscounts1 serviceDiscounts1;

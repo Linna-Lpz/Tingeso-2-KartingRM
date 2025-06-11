@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/discounts2")
+@RequestMapping("/api/discounts2")
 public class ControlDiscounts2 {
     @Autowired
     ServiceDiscounts2 serviceDiscounts2;

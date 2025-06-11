@@ -13,7 +13,7 @@ import com.example.ms_booking.entity.EntityClient;
 import com.example.ms_booking.service.ServiceClient;
 
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/api/client")
 
 public class ControlClient {
     @Autowired

@@ -25,6 +25,7 @@ spring:
               - OPTIONS
             allowedHeaders: "*"
             allowCredentials: false
+            accessControlAllowOrigin: "*"
             maxAge: 3600
       routes:
         - id: ms-booking
